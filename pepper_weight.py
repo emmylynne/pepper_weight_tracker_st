@@ -13,11 +13,10 @@ import altair as alt
 from PIL import Image
 
 
-im = Image.open(r'C:\Users\User\OneDrive\Documents\pepper_weight_st\pep_icon.jpg')
+# im = Image.open(r'C:\Users\User\OneDrive\Documents\pepper_weight_st\pep_icon.jpg')
 
 
-st.set_page_config(layout="wide", page_title="Pepper's Weight Tracker",
-                   page_icon = im)
+st.set_page_config(layout="wide", page_title="Pepper's Weight Tracker") #page_icon = im
 hide_default_format = """
        <style>
        
