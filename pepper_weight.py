@@ -26,7 +26,7 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 
-pep_df = pd.read_csv('.\pepper_weight_history.csv')
+pep_df = pd.read_csv('pepper_weight_history.csv')
 pep_df['Date'] = pd.to_datetime(pep_df['Date'], 
                                 infer_datetime_format=True)
 pep_df['Weight'] = pep_df[['Pounds', 'Ounces']].apply(
