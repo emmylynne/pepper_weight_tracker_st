@@ -10,7 +10,7 @@ a streamlit app to track Pepper's weight loss
 import streamlit as st
 import pandas as pd
 import altair as alt
-from PIL import Image
+# from PIL import Image
 
 
 # im = Image.open(r'C:\Users\User\OneDrive\Documents\pepper_weight_st\pep_icon.jpg')
@@ -26,7 +26,7 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 
-pep_df = pd.read_csv('..\pepper_weight_history.csv')
+pep_df = pd.read_csv('.\pepper_weight_history.csv')
 pep_df['Date'] = pd.to_datetime(pep_df['Date'], 
                                 infer_datetime_format=True)
 pep_df['Weight'] = pep_df[['Pounds', 'Ounces']].apply(
@@ -77,11 +77,6 @@ rules = alt.Chart(pd.DataFrame({
 
 with left:
     st.header('Weight history')
-    
-    fig, ax = plt.subplots()
-    sns.scatterplot(data=pep_df, x='Date', y='Weight', ax=ax)
-
-    # st.pyplot(fig)
     
     st.altair_chart(weight_hist + rules, use_container_width=True)
 
